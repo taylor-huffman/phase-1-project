@@ -13,29 +13,30 @@
     <div class="wrapper">
         <header class="mt-3 container-sm">
             <nav class="navbar navbar-light">
-              <div class="container-fluid">
-                <a class="navbar-brand" id="navbar-logo">Goodbye, Boredom!</a>
-                <div class="icon-container"><svg id="icon-stats-graph" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bar-chart disabled" viewBox="0 0 16 16" data-bs-toggle="modal" data-bs-target="#statsModal">
-                    <path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
-                </svg>
-              </div>
-              </div>
+                <div class="container-fluid">
+                    <a class="navbar-brand" id="navbar-logo">Goodbye, Boredom!</a>
+                    <div class="icon-container">
+                        <svg id="icon-stats-graph" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bar-chart disabled" viewBox="0 0 16 16" data-bs-toggle="modal" data-bs-target="#statsModal">
+                            <path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
+                        </svg>
+                    </div>
+                </div>
             </nav>
-          </header>
+        </header>
         <main class="mt-3 container-sm">
             <section id="title-button-name-prompt">
                 <h1 class="display-5 mt-4 pt-3">Wanna try something new today?</h1>
                 <div id="name-prompt-container">
-                <p class="mt-5">Start By Entering Your Name:</p>
-                <form id="submit-name" action="POST">
-                    <input type="text" name="name" id="name" placeholder="Enter Your Name" class="p-2">
-                    <input type="submit" value="Submit" id="name-prompt-submit-button" class="btn btn-primary p-2">
-                </form>
-              </div>
-              <div id="try-button-container" class="hide">
-                <p id="greeting" class="mt-5"></p>
-                <button id="try-button" class="btn btn-primary">Click For A Suggested Activity</button>
-            </div>
+                    <p class="mt-5">Start By Entering Your Name:</p>
+                    <form id="submit-name" action="POST">
+                        <input type="text" name="name" id="name" placeholder="Enter Your Name" class="p-2">
+                        <input type="submit" value="Submit" id="name-prompt-submit-button" class="btn btn-primary p-2">
+                    </form>
+                </div>
+                <div id="try-button-container" class="hide">
+                    <p id="greeting" class="mt-5"></p>
+                    <button id="try-button" class="btn btn-primary">Click For A Suggested Activity</button>
+                </div>
             </section>
             <section id="content">
                 <img class="mt-4" src="./media/peep illustration.svg" alt="Illustration of Man With Beard">
@@ -47,25 +48,25 @@
     </div>
     <div class="modal fade" id="statsModal" tabindex="-1" aria-labelledby="statsModal" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title display-6" id="statsModal">Activity Details</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title display-6" id="statsModal">Activity Details</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="user-content-container">
+                        <p id="user-activity-title" class="mt-3 fw-bold"></p>
+                        <div id="user-content"></div>
+                    </div>
+                    <div id="total-stats">
+                        <p id="total-stats-title" class="mt-3 fw-bold">
+                            Activity Stats - All Users
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-              <div id="user-content-container">
-                <p id="user-activity-title" class="mt-3 fw-bold"></p>
-                <div id="user-content"></div>
-              </div>
-              <div id="total-stats">
-                <p id="total-stats-title" class="mt-3 fw-bold">
-                  Activity Stats - All Users
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     <script src="./index.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
-
 // Fetch Activity Function
 const fetchActivity = () => {
     fetch('https://www.boredapi.com/api/activity/')
     .then(res => res.json())
     .then(data => showActivity(data))
 }
+
 
 // Global Variables
 const navbarLogo = document.getElementById('navbar-logo')
@@ -18,11 +18,13 @@ const form = document.getElementById('submit-name')
 const formContainer = document.getElementById('name-prompt-container')
 const imageArray = ['./media/peep illustration1.svg', './media/peep illustration2.svg', './media/peep illustration3.svg', './media/peep illustration4.svg', './media/peep illustration5.svg', './media/peep illustration6.svg', './media/peep illustration7.svg', './media/peep illustration8.svg']
 
+
 // Reset Content Section (Activity Suggestions) to initial state
 function resetContentSection() {
     contentSection.innerHTML = ''
     contentSection.innerHTML = '<img class="mt-4" src="./media/peep illustration.svg" alt="Goodbye Boredom Logo">'
 }
+
 
 // Show Fetched Activity
 function showActivity(data) {
@@ -186,11 +188,13 @@ function checkCookie() {
 
 checkCookie()
 
+
 // Handles Form Submission 
 function submitHandler(e) {
     e.preventDefault()
     setCookie('username', form.name.value, 90)
     user = getCookie('username')
+    postUser(user)
     showUserActivityTitle()
     fetchUserActivities()
     form.reset()
@@ -199,6 +203,30 @@ function submitHandler(e) {
     greeting.textContent = `Welcome, ${user}!`
     tryButtonContainer.classList.remove('hide')
 }
+
+
+// Check for user in DB and, if no user exists, post new user
+function postUser(user) {
+    fetch(`http://localhost:3000/users?name=${user}`)
+    .then(res => res.json())
+    .then(data => {
+        if (data.length === 0) {
+            fetch('http://localhost:3000/users', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                name: user,
+                activities: []
+                })
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+        }
+    })
+}
+
 
 // Primary Event listeners
 navbarLogo.addEventListener('click', resetContentSection)
