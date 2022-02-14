@@ -23,3 +23,24 @@ main, footer {
 #try-button {
     margin-bottom: .4rem;
 }
+
+.activity-image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -138px;
+    margin-top: 0px;
+}
+
+@media (min-width:768px) {
+    .activity-image-container {
+        margin-top: -90px;
+    };
+}
+
+.activity-image {
+    max-width: 150px;
+}
+
+#imageRight {
+    transform: rotateY(180deg);
+}
