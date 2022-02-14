@@ -1,34 +1,43 @@
 {
-    "users": [
+  "users": [
+    {
+      "id": 1,
+      "name": "Taylor Huffman",
+      "activities": [
         {
-            "id": 1,
-            "name": "Taylor Huffman",
-            "activities": [
-                {
-                    "activity": "Learn how to fold a paper crane",
-                    "type": "education",
-                    "participants": 1,
-                    "price": 0.1,
-                    "link": "",
-                    "key": "3136036",
-                    "accessibility": 0.05
-                }
-            ]
+          "activity": "Learn how to fold a paper crane",
+          "type": "education",
+          "participants": 1,
+          "price": 0.1,
+          "link": "",
+          "key": "3136036",
+          "accessibility": 0.05
         },
         {
-            "id": 2,
-            "name": "Charlotte Boman",
-            "activities": [
-                {
-                    "activity": "Volunteer at your local food bank",
-                    "type": "charity",
-                    "participants": 1,
-                    "price": 0,
-                    "link": "",
-                    "key": "2055368",
-                    "accessibility": 0.1
-                }
-            ]
+          "activity": "Bake pastries for you and your neighbor",
+          "type": "cooking",
+          "participants": 1,
+          "price": 0.4,
+          "link": "",
+          "key": "8125168",
+          "accessibility": 0.3
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Charlotte Boman",
+      "activities": [
+        {
+          "activity": "Volunteer at your local food bank",
+          "type": "charity",
+          "participants": 1,
+          "price": 0,
+          "link": "",
+          "key": "2055368",
+          "accessibility": 0.1
+        }
+      ]
+    }
+  ]
 }

@@ -69,8 +69,28 @@ function addButtonHandler(e, data) {
     console.log(data)
     fetch(`http://localhost:3000/users?name=${getCookie('username')}`)
     .then(res => res.json())
-    .then(user => console.log(user))
+    .then(user => patchActivity(user, data))
 }
+
+function patchActivity(user, data) {
+    let activitiesArray = user[0].activities
+    activitiesArray.push(data)
+    // console.log(activitiesArray)
+    // console.log(data)
+    fetch(`http://localhost:3000/users/${user[0].id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        activities: activitiesArray
+      })
+    })
+    .then(res => res.json())
+    .then((data) => {
+      console.log(data)
+    })
+  }
 
 
 // Cookie Functions
