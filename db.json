@@ -30,6 +30,15 @@
           "link": "",
           "key": "5490351",
           "accessibility": 0.7
+        },
+        {
+          "activity": "Start a daily journal",
+          "type": "relaxation",
+          "participants": 1,
+          "price": 0,
+          "link": "",
+          "key": "8779876",
+          "accessibility": 0
         }
       ]
     },

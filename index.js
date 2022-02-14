@@ -78,22 +78,29 @@ function addButtonHandler(e, data) {
 function patchActivity(user, data) {
     let activitiesArray = user[0].activities
     activitiesArray.push(data)
-    // console.log(activitiesArray)
-    // console.log(data)
     fetch(`http://localhost:3000/users/${user[0].id}`, {
-      method: 'PATCH',
-      headers: {
+        method: 'PATCH',
+        headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
+        },
+        body: JSON.stringify({
         activities: activitiesArray
-      })
+        })
     })
     .then(res => res.json())
     .then(() => {
       fetchUserActivities()
     })
-  }
+}
+
+
+// Display user activitie's name/modal section title
+function showUserActivityTitle() {
+    const userActivityTitle = document.getElementById('user-activity-title')
+    userActivityTitle.textContent = `${getCookie('username')}'s Activity List`
+}
+showUserActivityTitle()
+
 
 // Fetch and Display All User's Activities
 function fetchUserActivities() {
