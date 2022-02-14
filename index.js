@@ -9,6 +9,7 @@ const fetchActivity = () => {
 // Global Variables
 const navbarLogo = document.getElementById('navbar-logo')
 const statsIcon = document.getElementById('icon-stats-graph')
+const userContent = document.getElementById('user-content')
 const contentSection = document.getElementById('content')
 const greeting = document.getElementById('greeting')
 const tryButtonContainer = document.getElementById('try-button-container')
@@ -72,6 +73,8 @@ function addButtonHandler(e, data) {
     .then(user => patchActivity(user, data))
 }
 
+
+// Patch user's selected activity to DB
 function patchActivity(user, data) {
     let activitiesArray = user[0].activities
     activitiesArray.push(data)
@@ -87,10 +90,53 @@ function patchActivity(user, data) {
       })
     })
     .then(res => res.json())
-    .then((data) => {
-      console.log(data)
+    .then(() => {
+      fetchUserActivities()
     })
   }
+
+// Fetch and Display All User's Activities
+function fetchUserActivities() {
+    fetch(`http://localhost:3000/users?name=${getCookie('username')}`)
+    .then(res => res.json())
+    .then(data => {
+        if(data[0].activities.length === 0) {
+            let activityItemContainer = document.createElement('div')
+            activityItemContainer.classList.add('mb-3', 'bg-light', 'p-3')
+            let activityItemTitle = document.createElement('p')
+            activityItemTitle.classList.add('display-6', 'fs-4')
+            activityItemTitle.textContent = 'No activities yet!'
+            activityItemContainer.appendChild(activityItemTitle)
+            userContent.appendChild(activityItemContainer)
+        } else {
+            userContent.innerHTML = ''
+            let userActivities = data[0].activities
+            userActivities.forEach(element => {
+                let activityItemContainer = document.createElement('div')
+                activityItemContainer.classList.add('mb-3', 'bg-light', 'p-3')
+                let activityItemTitle = document.createElement('p')
+                activityItemTitle.classList.add('display-6', 'fs-4')
+                let activityItemType = document.createElement('p')
+                activityItemType.classList.add('no-margin')
+                let activityItemParticipants = document.createElement('p')
+                const googleLink = document.createElement('a')
+                const googleLinkContainer = document.createElement('p')
+                googleLink.href = `https://www.google.com/search?q=${element.activity}`
+                googleLink.target = '_blank'
+                googleLink.text = 'Learn More'
+                activityItemParticipants.classList.add('no-margin')
+                activityItemType.textContent = `Type: ${element.type[0].toUpperCase()}${element.type.slice(1)}`
+                activityItemParticipants.textContent = `# of Participants: ${element.participants}`
+                activityItemTitle.textContent = element.activity
+                googleLinkContainer.appendChild(googleLink)
+                activityItemContainer.append(activityItemTitle, activityItemType, activityItemParticipants, googleLinkContainer)
+                userContent.appendChild(activityItemContainer)
+            });
+        }
+    })
+}
+
+fetchUserActivities()
 
 
 // Cookie Functions

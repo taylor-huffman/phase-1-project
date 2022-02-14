@@ -21,6 +21,15 @@
           "link": "",
           "key": "8125168",
           "accessibility": 0.3
+        },
+        {
+          "activity": "Visit a nearby museum",
+          "type": "recreational",
+          "participants": 1,
+          "price": 0.2,
+          "link": "",
+          "key": "5490351",
+          "accessibility": 0.7
         }
       ]
     },
