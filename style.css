@@ -5,7 +5,7 @@
     max-width: 900px;
     width: 98%;
     margin: 0px auto;
-    padding-bottom: 120px;
+    padding-bottom: 30px;
 }
 
 h1 {
@@ -43,4 +43,9 @@ main, footer {
 
 #imageRight {
     transform: rotateY(180deg);
+}
+
+footer {
+    margin-top: 120px;
+    margin-bottom: 10px;
 }
