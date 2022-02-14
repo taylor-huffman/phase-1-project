@@ -43,6 +43,9 @@ function showActivity(data) {
     const addButton = document.createElement('button')
     addButton.classList.add('btn', 'btn-outline-primary', 'mt-2')
     addButton.textContent = 'Add To My Activities'
+    addButton.dataset.bsToggle = 'modal'
+    addButton.dataset.bsTarget = '#statsModal'
+    addButton.addEventListener('click', (e) => addButtonHandler(e, data))
     const activityImagesContainer = document.createElement('div')
     activityImagesContainer.classList.add('activity-image-container', 'pt-4')
     const imageLeft = document.createElement('img')
@@ -57,6 +60,16 @@ function showActivity(data) {
     activityImagesContainer.append(imageLeft, imageRight)
     activityContainer.append(activityTitle, activityType, activityParticipants, googleLinkContainer, addButton, activityImagesContainer)
     contentSection.appendChild(activityContainer)
+}
+
+
+// Add Button Function
+function addButtonHandler(e, data) {
+    console.log(e)
+    console.log(data)
+    fetch(`http://localhost:3000/users?name=${getCookie('username')}`)
+    .then(res => res.json())
+    .then(user => console.log(user))
 }
 
 
