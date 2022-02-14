@@ -24,6 +24,18 @@ main, footer {
     margin-bottom: .4rem;
 }
 
+.activity-container, .modal-header {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url('./media/bg-image-squigglylines.jpg');
+    background-size: 350px;
+}
+
+.modal-header {
+    width: 100%;
+}
+
 .activity-image-container {
     display: flex;
     justify-content: space-between;
