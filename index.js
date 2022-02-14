@@ -15,6 +15,12 @@ const formContainer = document.getElementById('name-prompt-container')
 const imageArray = ['./media/peep illustration1.svg', './media/peep illustration2.svg', './media/peep illustration3.svg', './media/peep illustration4.svg', './media/peep illustration5.svg', './media/peep illustration6.svg', './media/peep illustration7.svg', './media/peep illustration8.svg']
 
 
+function resetContentSection() {
+    contentSection.innerHTML = ''
+    contentSection.innerHTML = '<img class="mt-4" src="./media/peep illustration.svg" alt="Goodbye Boredom Logo">'
+}
+
+
 function showActivity(data) {
     contentSection.innerHTML = ''
     const activityContainer = document.createElement('div')
@@ -50,4 +56,6 @@ function showActivity(data) {
     contentSection.appendChild(activityContainer)
 }
 
+
+navbarLogo.addEventListener('click', resetContentSection)
 tryButton.addEventListener('click', fetchActivity)
