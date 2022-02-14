@@ -24,6 +24,10 @@ main, footer {
     margin-bottom: .4rem;
 }
 
+#navbar-logo, #icon-stats-graph {
+    cursor: pointer;
+}
+
 .activity-container, .modal-header {
     max-width: 650px;
     margin-left: auto;
