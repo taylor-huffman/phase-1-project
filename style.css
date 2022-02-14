@@ -28,6 +28,11 @@ main, footer {
     cursor: pointer;
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+}
+
 .activity-container, .modal-header {
     max-width: 650px;
     margin-left: auto;
@@ -59,6 +64,10 @@ main, footer {
 
 #imageRight {
     transform: rotateY(180deg);
+}
+
+.hide {
+    display: none!important;
 }
 
 footer {
