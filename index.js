@@ -191,6 +191,8 @@ function submitHandler(e) {
     e.preventDefault()
     setCookie('username', form.name.value, 90)
     user = getCookie('username')
+    showUserActivityTitle()
+    fetchUserActivities()
     form.reset()
     formContainer.remove()
     statsIcon.classList.remove('disabled')
