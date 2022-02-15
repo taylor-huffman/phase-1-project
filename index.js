@@ -91,7 +91,7 @@ function patchActivity(user, data) {
     })
     .then(res => res.json())
     .then(() => {
-      fetchUserActivities()
+        fetchUserActivities()
     })
 }
 
@@ -225,6 +225,18 @@ function postUser(user) {
             .then(data => console.log(data))
         }
     })
+}
+
+
+// Fetch All Activities For Stats Section
+function getAllActivities() {
+    let allActivitiesArray = []
+    fetch('http://localhost:3000/users')
+    .then(res => res.json())
+    .then(data => {
+        data.forEach(item => item.activities.forEach(item => allActivitiesArray.push(item)))
+    })
+    return allActivitiesArray
 }
 
 

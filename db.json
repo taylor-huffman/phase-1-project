@@ -21,6 +21,15 @@
           "link": "",
           "key": "8125168",
           "accessibility": 0.3
+        },
+        {
+          "activity": "Text a friend you haven't talked to in a long time",
+          "type": "social",
+          "participants": 2,
+          "price": 0.05,
+          "link": "",
+          "key": "6081071",
+          "accessibility": 0.2
         }
       ]
     },
