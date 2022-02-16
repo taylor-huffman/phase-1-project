@@ -53,7 +53,7 @@ explorer.exe index.html
 Excellent! You did it! You're now ready to operate the app! Please proceed to the operation instructions.
 
 ## Operation Instructions
-![Goodbye, Boredom. Gif](./media/readme/goodbyeboredome.gif)
+![Goodbye, Boredom. Gif](./media/readme/goodbyeboredomvideo.gif)
 
 This app is pretty straight-forward and intuitive. Follow simple instructions below to operate the app.
 
