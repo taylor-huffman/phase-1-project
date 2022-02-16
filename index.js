@@ -69,9 +69,7 @@ function showActivity(data) {
 
 
 // Add Button Function
-function addButtonHandler(e, data) {
-    console.log(e)
-    console.log(data)
+function addButtonHandler(data) {
     fetch(`http://localhost:3000/users?name=${getCookie('username')}`)
     .then(res => res.json())
     .then(user => patchActivity(user, data))
