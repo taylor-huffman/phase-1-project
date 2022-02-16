@@ -53,6 +53,8 @@ explorer.exe index.html
 Excellent! You did it! You're now ready to operate the app! Please proceed to the operation instructions.
 
 ## Operation Instructions
+![Goodbye, Boredom. Gif](./media/readme/goodbyeboredome.gif)
+
 This app is pretty straight-forward and intuitive. Follow simple instructions below to operate the app.
 
 Navigate to your browser tab that has index.html open.
