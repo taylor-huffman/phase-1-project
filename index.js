@@ -208,13 +208,6 @@ function submitHandler(e) {
     setCookie('username', form.name.value, 90)
     user = getCookie('username')
     postUser(user)
-    showUserActivityTitle()
-    fetchUserActivities()
-    form.reset()
-    formContainer.remove()
-    statsIcon.classList.remove('disabled')
-    greeting.textContent = `Welcome, ${user}!`
-    tryButtonContainer.classList.remove('hide')
 }
 
 
@@ -235,7 +228,23 @@ function postUser(user) {
                 })
             })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(() => {
+                showUserActivityTitle()
+                fetchUserActivities()
+                form.reset()
+                formContainer.remove()
+                statsIcon.classList.remove('disabled')
+                greeting.textContent = `Welcome, ${user}!`
+                tryButtonContainer.classList.remove('hide')
+            })
+        } else {
+            showUserActivityTitle()
+            fetchUserActivities()
+            form.reset()
+            formContainer.remove()
+            statsIcon.classList.remove('disabled')
+            greeting.textContent = `Welcome, ${user}!`
+            tryButtonContainer.classList.remove('hide')
         }
     })
 }

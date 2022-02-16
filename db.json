@@ -71,6 +71,21 @@
         }
       ],
       "id": 3
+    },
+    {
+      "name": "Harald Huffman",
+      "activities": [
+        {
+          "activity": "Donate blood at a local blood center",
+          "type": "charity",
+          "participants": 1,
+          "price": 0,
+          "link": "https://www.redcross.org/give-blood",
+          "key": "6509779",
+          "accessibility": 0.35
+        }
+      ],
+      "id": 4
     }
   ]
 }
