@@ -21,24 +21,6 @@
           "link": "",
           "key": "6081071",
           "accessibility": 0.2
-        },
-        {
-          "activity": "Go see a movie in theaters with a few friends",
-          "type": "social",
-          "participants": 4,
-          "price": 0.2,
-          "link": "",
-          "key": "5262759",
-          "accessibility": 0.3
-        },
-        {
-          "activity": "Listen to a new music genre",
-          "type": "music",
-          "participants": 1,
-          "price": 0,
-          "link": "",
-          "key": "4708863",
-          "accessibility": 0
         }
       ]
     },
@@ -56,15 +38,6 @@
           "accessibility": 0.1
         },
         {
-          "activity": "Go see a movie in theaters with a few friends",
-          "type": "social",
-          "participants": 4,
-          "price": 0.2,
-          "link": "",
-          "key": "5262759",
-          "accessibility": 0.3
-        },
-        {
           "activity": "Bake pastries for you and your neighbor",
           "type": "cooking",
           "participants": 1,
@@ -78,15 +51,6 @@
     {
       "name": "Henrik Huffman",
       "activities": [
-        {
-          "activity": "Go see a movie in theaters with a few friends",
-          "type": "social",
-          "participants": 4,
-          "price": 0.2,
-          "link": "",
-          "key": "5262759",
-          "accessibility": 0.3
-        },
         {
           "activity": "Bake pastries for you and your neighbor",
           "type": "cooking",

@@ -69,7 +69,7 @@ function showActivity(data) {
 
 
 // Add Button Function
-function addButtonHandler(data) {
+function addButtonHandler(e, data) {
     fetch(`http://localhost:3000/users?name=${getCookie('username')}`)
     .then(res => res.json())
     .then(user => patchActivity(user, data))
@@ -124,6 +124,10 @@ function fetchUserActivities() {
             userActivities.forEach(element => {
                 let activityItemContainer = document.createElement('div')
                 activityItemContainer.classList.add('mb-3', 'bg-light', 'p-3')
+                let x = document.createElement('p')
+                x.classList.add('p-1', 'px-2', 'border', 'border-secondary', 'text-secondary', 'float-right', 'cursor-pointer')
+                x.textContent = 'X'
+                x.addEventListener('click', (e) => removeItem(e, element))
                 let activityItemTitle = document.createElement('p')
                 activityItemTitle.classList.add('display-6', 'fs-4')
                 let activityItemType = document.createElement('p')
@@ -139,7 +143,7 @@ function fetchUserActivities() {
                 activityItemParticipants.textContent = `# of Participants: ${element.participants}`
                 activityItemTitle.textContent = element.activity
                 googleLinkContainer.appendChild(googleLink)
-                activityItemContainer.append(activityItemTitle, activityItemType, activityItemParticipants, googleLinkContainer)
+                activityItemContainer.append(x, activityItemTitle, activityItemType, activityItemParticipants, googleLinkContainer)
                 userContent.appendChild(activityItemContainer)
             });
         }
@@ -147,6 +151,14 @@ function fetchUserActivities() {
 }
 
 fetchUserActivities()
+
+
+
+// Remove Item From User Activity List
+function removeItem(e, element) {
+    console.log(e, element)
+    e.target.parentNode.remove()
+}
 
 
 // Cookie Functions
