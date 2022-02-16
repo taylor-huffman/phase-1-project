@@ -10,6 +10,8 @@ const fetchActivity = () => {
 const navbarLogo = document.getElementById('navbar-logo')
 const statsIcon = document.getElementById('icon-stats-graph')
 const userContent = document.getElementById('user-content')
+const totalStats = document.getElementById('total-stats')
+const favoriteActivityContainer = document.getElementById('favorite-activity-container')
 const contentSection = document.getElementById('content')
 const greeting = document.getElementById('greeting')
 const tryButtonContainer = document.getElementById('try-button-container')
@@ -92,6 +94,7 @@ function patchActivity(user, data) {
     .then(res => res.json())
     .then(() => {
         fetchUserActivities()
+        displayMostPopularActivity()
     })
 }
 
@@ -231,13 +234,38 @@ function postUser(user) {
 // Fetch All Activities For Stats Section
 function getAllActivities() {
     let allActivitiesArray = []
+    let count = {}
     fetch('http://localhost:3000/users')
     .then(res => res.json())
     .then(data => {
-        data.forEach(item => item.activities.forEach(item => allActivitiesArray.push(item)))
+        data.forEach(obj => obj.activities.forEach(item => allActivitiesArray.push(item.activity)))
+        for (const element of allActivitiesArray) {
+            if (count[element]) {
+                count[element] += 1
+            } else {
+                count[element] = 1
+            }
+        }
     })
-    return allActivitiesArray
+    return count
 }
+
+
+// Find and display most popular activity
+function displayMostPopularActivity() {
+    let obj = getAllActivities()
+    setTimeout(() => {
+        favoriteActivityContainer.innerHTML = ''
+        let favoriteActivityTitle = document.createElement('p')
+        favoriteActivityTitle.classList.add('display-6', 'fs-4')
+        favoriteActivityTitle.textContent = `${Object.keys(obj).reduce((a,b) => obj[a] > obj[b] ? a : b)}`
+        let favoriteActivityCount = document.createElement('p')
+        favoriteActivityCount.textContent = `Added ${Math.max(...Object.values(obj))} times`
+        favoriteActivityContainer.append(favoriteActivityTitle, favoriteActivityCount)
+    }, 1000)
+}
+
+displayMostPopularActivity()
 
 
 // Primary Event listeners

@@ -14,15 +14,6 @@
           "accessibility": 0.05
         },
         {
-          "activity": "Bake pastries for you and your neighbor",
-          "type": "cooking",
-          "participants": 1,
-          "price": 0.4,
-          "link": "",
-          "key": "8125168",
-          "accessibility": 0.3
-        },
-        {
           "activity": "Text a friend you haven't talked to in a long time",
           "type": "social",
           "participants": 2,
@@ -30,6 +21,15 @@
           "link": "",
           "key": "6081071",
           "accessibility": 0.2
+        },
+        {
+          "activity": "Go see a movie in theaters with a few friends",
+          "type": "social",
+          "participants": 4,
+          "price": 0.2,
+          "link": "",
+          "key": "5262759",
+          "accessibility": 0.3
         }
       ]
     },
@@ -45,12 +45,48 @@
           "link": "",
           "key": "2055368",
           "accessibility": 0.1
+        },
+        {
+          "activity": "Go see a movie in theaters with a few friends",
+          "type": "social",
+          "participants": 4,
+          "price": 0.2,
+          "link": "",
+          "key": "5262759",
+          "accessibility": 0.3
+        },
+        {
+          "activity": "Bake pastries for you and your neighbor",
+          "type": "cooking",
+          "participants": 1,
+          "price": 0.4,
+          "link": "",
+          "key": "8125168",
+          "accessibility": 0.3
         }
       ]
     },
     {
       "name": "Henrik Huffman",
       "activities": [
+        {
+          "activity": "Go see a movie in theaters with a few friends",
+          "type": "social",
+          "participants": 4,
+          "price": 0.2,
+          "link": "",
+          "key": "5262759",
+          "accessibility": 0.3
+        },
+        {
+          "activity": "Bake pastries for you and your neighbor",
+          "type": "cooking",
+          "participants": 1,
+          "price": 0.4,
+          "link": "",
+          "key": "8125168",
+          "accessibility": 0.3
+        },
         {
           "activity": "Go see a movie in theaters with a few friends",
           "type": "social",
