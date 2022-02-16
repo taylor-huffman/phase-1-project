@@ -21,24 +21,6 @@
           "link": "",
           "key": "6081071",
           "accessibility": 0.2
-        },
-        {
-          "activity": "Pull a harmless prank on one of your friends",
-          "type": "social",
-          "participants": 1,
-          "price": 0.1,
-          "link": "",
-          "key": "1288934",
-          "accessibility": 0.2
-        },
-        {
-          "activity": "Start a band",
-          "type": "music",
-          "participants": 4,
-          "price": 0.3,
-          "link": "",
-          "key": "5675880",
-          "accessibility": 0.8
         }
       ]
     },

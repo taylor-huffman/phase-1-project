@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 // Fetch Activity Function
 const fetchActivity = () => {
     fetch('https://www.boredapi.com/api/activity/')
@@ -291,3 +292,4 @@ displayMostPopularActivity()
 navbarLogo.addEventListener('click', resetContentSection)
 form.addEventListener('submit', submitHandler)
 tryButton.addEventListener('click', fetchActivity)
+})
