@@ -11,7 +11,6 @@ const fetchActivity = () => {
 const navbarLogo = document.getElementById('navbar-logo')
 const statsIcon = document.getElementById('icon-stats-graph')
 const userContent = document.getElementById('user-content')
-const totalStats = document.getElementById('total-stats')
 const favoriteActivityContainer = document.getElementById('favorite-activity-container')
 const contentSection = document.getElementById('content')
 const greeting = document.getElementById('greeting')
