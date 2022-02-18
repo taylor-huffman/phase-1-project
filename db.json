@@ -21,6 +21,24 @@
           "link": "",
           "key": "6081071",
           "accessibility": 0.2
+        },
+        {
+          "activity": "Surprise your significant other with something considerate",
+          "type": "social",
+          "participants": 1,
+          "price": 0,
+          "link": "",
+          "key": "6204657",
+          "accessibility": 0
+        },
+        {
+          "activity": "Visit a nearby museum",
+          "type": "recreational",
+          "participants": 1,
+          "price": 0.2,
+          "link": "",
+          "key": "5490351",
+          "accessibility": 0.7
         }
       ]
     },
@@ -95,6 +113,21 @@
         }
       ],
       "id": 4
+    },
+    {
+      "name": "Michael Jordan",
+      "activities": [
+        {
+          "activity": "Organize a bookshelf",
+          "type": "busywork",
+          "participants": 1,
+          "price": 0,
+          "link": "",
+          "key": "6098037",
+          "accessibility": 0
+        }
+      ],
+      "id": 5
     }
   ]
 }
