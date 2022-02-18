@@ -39,6 +39,15 @@
           "link": "",
           "key": "5490351",
           "accessibility": 0.7
+        },
+        {
+          "activity": "Clean out your garage",
+          "type": "busywork",
+          "participants": 1,
+          "price": 0,
+          "link": "",
+          "key": "7023703",
+          "accessibility": 0.1
         }
       ]
     },

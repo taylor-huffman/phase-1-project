@@ -153,7 +153,6 @@ function fetchUserActivities() {
 fetchUserActivities()
 
 
-
 // Remove Item From User Activity List
 function removeItem(e, element) {
     console.log(e, element)
@@ -188,15 +187,8 @@ function getCookie(cname) {
 function checkCookie() {
     let user = getCookie("username");
     if (user != "") {
-        formContainer.remove()
-        statsIcon.classList.remove('disabled')
-        greeting.textContent = `Welcome, ${user}!`
-        tryButtonContainer.classList.remove('hide')
-    } else {
-        if (user != "" && user != null) {
-            setCookie("username", user, 90);
-        }
-    }
+        showLoggedInState(user)
+    } 
 }
 
 checkCookie()
@@ -231,22 +223,24 @@ function postUser(user) {
             .then(() => {
                 showUserActivityTitle()
                 fetchUserActivities()
-                form.reset()
-                formContainer.remove()
-                statsIcon.classList.remove('disabled')
-                greeting.textContent = `Welcome, ${user}!`
-                tryButtonContainer.classList.remove('hide')
+                showLoggedInState(user)
             })
         } else {
             showUserActivityTitle()
             fetchUserActivities()
-            form.reset()
-            formContainer.remove()
-            statsIcon.classList.remove('disabled')
-            greeting.textContent = `Welcome, ${user}!`
-            tryButtonContainer.classList.remove('hide')
+            showLoggedInState(user)
         }
     })
+}
+
+
+// Show Logged-In State
+function showLoggedInState(user) {
+    form.reset()
+    formContainer.remove()
+    statsIcon.classList.remove('disabled')
+    greeting.textContent = `Welcome, ${user}!`
+    tryButtonContainer.classList.remove('hide')
 }
 
 
