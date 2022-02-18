@@ -23,31 +23,22 @@
           "accessibility": 0.2
         },
         {
-          "activity": "Surprise your significant other with something considerate",
+          "activity": "Play a game of tennis with a friend",
           "type": "social",
-          "participants": 1,
-          "price": 0,
+          "participants": 2,
+          "price": 0.1,
           "link": "",
-          "key": "6204657",
-          "accessibility": 0
+          "key": "1093640",
+          "accessibility": 0.4
         },
         {
-          "activity": "Visit a nearby museum",
-          "type": "recreational",
-          "participants": 1,
+          "activity": "Take a spontaneous road trip with some friends",
+          "type": "social",
+          "participants": 4,
           "price": 0.2,
           "link": "",
-          "key": "5490351",
-          "accessibility": 0.7
-        },
-        {
-          "activity": "Clean out your garage",
-          "type": "busywork",
-          "participants": 1,
-          "price": 0,
-          "link": "",
-          "key": "7023703",
-          "accessibility": 0.1
+          "key": "2085321",
+          "accessibility": 0.3
         }
       ]
     },
@@ -127,13 +118,13 @@
       "name": "Michael Jordan",
       "activities": [
         {
-          "activity": "Organize a bookshelf",
-          "type": "busywork",
+          "activity": "Go to the gym",
+          "type": "recreational",
           "participants": 1,
-          "price": 0,
+          "price": 0.2,
           "link": "",
-          "key": "6098037",
-          "accessibility": 0
+          "key": "4387026",
+          "accessibility": 0.1
         }
       ],
       "id": 5

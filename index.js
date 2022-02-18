@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+// Root URL for DB
+const userURL = 'http://localhost:3000/users'
+
+
 // Fetch Activity Function
 const fetchActivity = () => {
     fetch('https://www.boredapi.com/api/activity/')
@@ -70,7 +74,7 @@ function showActivity(data) {
 
 // Add Button Function
 function addButtonHandler(e, data) {
-    fetch(`http://localhost:3000/users?name=${getCookie('username')}`)
+    fetch(`${userURL}?name=${getCookie('username')}`)
     .then(res => res.json())
     .then(user => patchActivity(user, data))
 }
@@ -80,7 +84,7 @@ function addButtonHandler(e, data) {
 function patchActivity(user, data) {
     let activitiesArray = user[0].activities
     activitiesArray.push(data)
-    fetch(`http://localhost:3000/users/${user[0].id}`, {
+    fetch(`${userURL}/${user[0].id}`, {
         method: 'PATCH',
         headers: {
         'Content-Type': 'application/json'
@@ -107,7 +111,7 @@ showUserActivityTitle()
 
 // Fetch and Display All User's Activities
 function fetchUserActivities() {
-    fetch(`http://localhost:3000/users?name=${getCookie('username')}`)
+    fetch(`${userURL}?name=${getCookie('username')}`)
     .then(res => res.json())
     .then(data => {
         if(data[0].activities.length === 0) {
@@ -205,11 +209,11 @@ function submitHandler(e) {
 
 // Check for user in DB and, if no user exists, post new user
 function postUser(user) {
-    fetch(`http://localhost:3000/users?name=${user}`)
+    fetch(`${userURL}?name=${user}`)
     .then(res => res.json())
     .then(data => {
         if (data.length === 0) {
-            fetch('http://localhost:3000/users', {
+            fetch(userURL, {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
@@ -248,7 +252,7 @@ function showLoggedInState(user) {
 function getAllActivities() {
     let allActivitiesArray = []
     let count = {}
-    fetch('http://localhost:3000/users')
+    fetch(userURL)
     .then(res => res.json())
     .then(data => {
         data.forEach(obj => obj.activities.forEach(item => allActivitiesArray.push(item.activity)))
