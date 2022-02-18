@@ -125,7 +125,7 @@ function fetchUserActivities() {
                 let activityItemContainer = document.createElement('div')
                 activityItemContainer.classList.add('mb-3', 'bg-light', 'p-3')
                 let x = document.createElement('p')
-                x.classList.add('p-1', 'px-2', 'border', 'border-secondary', 'text-secondary', 'float-right', 'cursor-pointer')
+                x.classList.add('p-1', 'px-2', 'ms-1','border', 'border-secondary', 'text-secondary', 'float-right', 'cursor-pointer')
                 x.textContent = 'X'
                 x.addEventListener('click', (e) => removeItem(e, element))
                 let activityItemTitle = document.createElement('p')
